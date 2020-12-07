@@ -1,3 +1,5 @@
+import Player from "./components/Player";
+
 const App = ({ player1, player2, player1Increment, player2Increment, resetScore, servingP1, winner }) => (
   <>
       {/* header */}
@@ -7,35 +9,19 @@ const App = ({ player1, player2, player1Increment, player2Increment, resetScore,
 
       {/* scores */}
       <div className="row mb-4">
-          <div className="col-md-6 mt-4">
-              <div className={`card text-center ${ servingP1 ? "bg-dark text-white": "" }`}>
-                  <h5 className="card-header">Player 1</h5>
-                  <div className="card-body">
-                      <p className="card-text display-1">{ player1 }</p>
-                  </div>
-                  <div className="card-footer">
-                      <button 
-                        className="form-control btn btn-success"
-                        onClick={ player1Increment }
-                      >+</button>
-                  </div>
-              </div>
-          </div>
+          <Player 
+            player={ 1 }
+            servingPlayer={ servingP1 }
+            playerScore={ player1 }
+            playerIncrement={ player1Increment }
+          />
 
-          <div className="col-md-6 mt-4">
-              <div className={`card text-center ${ servingP1 ? "" : "bg-dark text-white" }`}>
-                  <h5 className="card-header">Player 2</h5>
-                  <div className="card-body">
-                      <p className="card-text display-1">{ player2 }</p>
-                  </div>
-                  <div className="card-footer">
-                      <button 
-                        className="form-control btn btn-success"
-                        onClick={ player2Increment }
-                      >+</button>
-                  </div>
-              </div>
-          </div>
+          <Player 
+            player={ 2 }
+            servingPlayer={ !servingP1 }
+            playerScore={ player2 }
+            playerIncrement={ player2Increment }
+          />
       </div>
 
       { /* winner message */}

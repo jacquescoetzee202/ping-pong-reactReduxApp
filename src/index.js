@@ -64,7 +64,7 @@ const render = () => {
 
   ReactDOM.render(
     <React.StrictMode>
-      <App 
+      <App
         player1={ state.player1 }
         player2={ state.player2 }
         servingP1={ state.servingP1 }
