@@ -15,11 +15,16 @@ const reducer = (state, action) => {
   switch (action.type) {
     case "PLAYER_1": return { ...state, player1: state.player1 + 1};
     case "PLAYER_2": return { ...state, player2: state.player2 + 1};
+    case "RESET": return initial;
     default : return state;
   }
 };
 
-const store = createStore(reducer, initial);
+const store = createStore(
+  reducer,
+  initial,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),  
+);
 
 const render = () => {
   let state = store.getState();
@@ -30,6 +35,8 @@ const render = () => {
         player1={ state.player1 }
         player2={ state.player2 }
         player1Increment={ () => store.dispatch({ type: "PLAYER_1" }) }
+        player2Increment={ () => store.dispatch({ type: "PLAYER_2" }) }
+        resetScore={ () => store.dispatch({ type: "RESET" }) }
       />
     </React.StrictMode>,
     document.getElementById('root')
