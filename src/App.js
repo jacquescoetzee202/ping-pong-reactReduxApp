@@ -1,4 +1,4 @@
-const App = ({ player1, player2 }) => (
+const App = ({ player1, player2, player1Increment }) => (
   <>
       {/* header */}
       <header className="jumbotron mt-4 mb-0">
@@ -14,7 +14,10 @@ const App = ({ player1, player2 }) => (
                       <p className="card-text display-1">{ player1 }</p>
                   </div>
                   <div className="card-footer">
-                      <button className="form-control btn btn-success">+</button>
+                      <button 
+                        className="form-control btn btn-success"
+                        onClick={ player1Increment }
+                      >+</button>
                   </div>
               </div>
           </div>

@@ -13,8 +13,8 @@ const initial = {
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case "PLAYER1": return { ...state, player1: state.player1 + 1};
-    case "PLAYER2": return { ...state, player2: state.player2 + 1};
+    case "PLAYER_1": return { ...state, player1: state.player1 + 1};
+    case "PLAYER_2": return { ...state, player2: state.player2 + 1};
     default : return state;
   }
 };
@@ -29,6 +29,7 @@ const render = () => {
       <App 
         player1={ state.player1 }
         player2={ state.player2 }
+        player1Increment={ () => store.dispatch({ type: "PLAYER_1" }) }
       />
     </React.StrictMode>,
     document.getElementById('root')
