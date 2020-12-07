@@ -12,6 +12,7 @@ const initial = {
   player2: 0,
   servingP1: true,
   winner: 0,
+  gameHistory: [],
 }
 // Reducer functions
 const player1 = state => ({ ...state, player1: state.player1 + 1});
@@ -44,12 +45,37 @@ const winner = state => {
   }
 }
 
+const history = state => {
+  if(state.winner === 0) {
+    return state;
+  }
+
+  const { player1, player2, winner } = state;
+
+  return {
+    ...state,
+    gameHistory: [ 
+      ...state.gameHistory,
+      {
+        player_1: {
+          score: player1,
+          won: winner === 1
+        },
+        player2: {
+          score: player2,
+          won: winner === 2
+        },
+      }
+    ]
+  } 
+}
+
 // Reducer
 const reducer = (state, action) => {
   switch (action.type) {
-    case "PLAYER_1": return winner(server(player1(state)));
-    case "PLAYER_2": return winner(server(player2(state)));
-    case "RESET": return initial;
+    case "PLAYER_1": return history(winner(server(player1(state))));
+    case "PLAYER_2": return history(winner(server(player2(state))));
+    case "RESET": return { ...initial, gameHistory: state.gameHistory };
     default : return state;
   }
 };
