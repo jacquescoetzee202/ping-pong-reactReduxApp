@@ -1,4 +1,4 @@
-const App = ({ player1, player2, player1Increment, player2Increment, resetScore, servingP1 }) => (
+const App = ({ player1, player2, player1Increment, player2Increment, resetScore, servingP1, winner }) => (
   <>
       {/* header */}
       <header className="jumbotron mt-4 mb-0">
@@ -39,7 +39,7 @@ const App = ({ player1, player2, player1Increment, player2Increment, resetScore,
       </div>
 
       { /* winner message */}
-      <h2 className="alert alert-success">Player {/* winning player here */} wins!</h2>
+      <h2 className={`alert alert-success ${ winner > 0 ? "" : "d-none" }`}>Player { winner } wins!</h2>
 
       <hr />
 
