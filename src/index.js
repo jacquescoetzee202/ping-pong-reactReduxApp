@@ -33,10 +33,10 @@ const winner = state => {
   if (winner > 0 ) {
     return { ...state };
   } 
-  else if ( player1 === 21 ) {
+  else if ( player1 >= 21 && player1 - player2 > 1 ) {
     return { ...state, winner: 1 };
   } 
-  else if ( player2 === 21) {
+  else if ( player2 >= 21 && player2 - player1 > 1 ) {
     return { ...state, winner: 2 };
   } else {
     return { ...state };
