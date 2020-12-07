@@ -1,3 +1,5 @@
+import Button from "./Button";
+
 const Player = ({ player, servingPlayer, playerScore, playerIncrement }) => {
     return (
         <div className="col-md-6 mt-4">
@@ -7,10 +9,9 @@ const Player = ({ player, servingPlayer, playerScore, playerIncrement }) => {
                     <p className="card-text display-1">{ playerScore }</p>
                 </div>
                 <div className="card-footer">
-                    <button 
-                    className="form-control btn btn-success"
-                    onClick={ playerIncrement }
-                    >+</button>
+                    <Button 
+                        handleClick={ playerIncrement }
+                    />
                 </div>
             </div>
         </div>
