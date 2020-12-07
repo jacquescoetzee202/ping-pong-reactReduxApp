@@ -19,7 +19,8 @@ const player2 = state => ({ ...state, player2: state.player2 + 1});
 
 const server = state => {
   const { servingP1, player1, player2 } = state;
-  let serveChange = (player1 + player2) % 5 === 0;
+  let modulo = player1 >= 20 && player2 >= 20 ? 2 : 5;
+  let serveChange = (player1 + player2) % modulo === 0;
 
   return {
     ...state,
