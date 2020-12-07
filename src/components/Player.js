@@ -1,6 +1,6 @@
 import Button from "./Button";
 
-const Player = ({ player, servingPlayer, playerScore, playerIncrement }) => {
+const Player = ({ player, servingPlayer, playerScore, playerIncrement, winner }) => {
     return (
         <div className="col-md-6 mt-4">
             <div className={`card text-center ${ servingPlayer ? "bg-dark text-white": "" }`}>
@@ -11,6 +11,7 @@ const Player = ({ player, servingPlayer, playerScore, playerIncrement }) => {
                 <div className="card-footer">
                     <Button 
                         handleClick={ playerIncrement }
+                        won={ winner > 0 }
                     />
                 </div>
             </div>

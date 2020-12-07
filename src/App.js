@@ -14,6 +14,7 @@ const App = ({ player1, player2, player1Increment, player2Increment, resetScore,
             servingPlayer={ servingP1 }
             playerScore={ player1 }
             playerIncrement={ player1Increment }
+            winner={ winner }
           />
 
           <Player 
@@ -21,6 +22,7 @@ const App = ({ player1, player2, player1Increment, player2Increment, resetScore,
             servingPlayer={ !servingP1 }
             playerScore={ player2 }
             playerIncrement={ player2Increment }
+            winner={ winner }
           />
       </div>
 
