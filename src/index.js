@@ -26,7 +26,10 @@ const render = () => {
 
   ReactDOM.render(
     <React.StrictMode>
-      <App />
+      <App 
+        player1={ state.player1 }
+        player2={ state.player2 }
+      />
     </React.StrictMode>,
     document.getElementById('root')
   );
