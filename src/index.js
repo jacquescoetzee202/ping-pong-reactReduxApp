@@ -6,15 +6,31 @@ import reportWebVitals from './reportWebVitals';
 
 import { createStore } from "redux";
 
+// initial state
 const initial = {
   player1: 0,
   player2: 0,
+  servingP1: true,
 }
+// Reducer functions
+const player1 = state => ({ ...state, player1: state.player1 + 1});
+const player2 = state => ({ ...state, player2: state.player2 + 1});
 
+const server = state => {
+  const { servingP1, player1, player2 } = state;
+  let serveChange = (player1 + player2) % 5 === 0;
+
+  return {
+    ...state,
+    servingP1: serveChange ? !servingP1 : servingP1,
+  }
+};
+
+// Reducer
 const reducer = (state, action) => {
   switch (action.type) {
-    case "PLAYER_1": return { ...state, player1: state.player1 + 1};
-    case "PLAYER_2": return { ...state, player2: state.player2 + 1};
+    case "PLAYER_1": return server(player1(state));
+    case "PLAYER_2": return server(player2(state));
     case "RESET": return initial;
     default : return state;
   }
@@ -34,6 +50,7 @@ const render = () => {
       <App 
         player1={ state.player1 }
         player2={ state.player2 }
+        servingP1={ state.servingP1 }
         player1Increment={ () => store.dispatch({ type: "PLAYER_1" }) }
         player2Increment={ () => store.dispatch({ type: "PLAYER_2" }) }
         resetScore={ () => store.dispatch({ type: "RESET" }) }
