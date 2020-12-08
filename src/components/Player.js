@@ -7,10 +7,6 @@ const Player = ({ player, servingPlayer, playerScore, playerIncrement, winner, p
             <div className={`card text-center ${ servingPlayer ? "bg-dark text-white": "" }`}>
                 <h5 className="card-header">{ playerText } { player }</h5>
                 <div className="card-body">
-                <Badge pill variant="primary">
-                    
-                    { servingPlayer ? servingText : "" }
-                </Badge>{' '}
                     <p className="card-text display-1">{ playerScore }</p>
                 </div>
                 <div className="card-footer">
@@ -18,6 +14,10 @@ const Player = ({ player, servingPlayer, playerScore, playerIncrement, winner, p
                         handleClick={ playerIncrement }
                         won={ winner > 0 }
                     />
+                    <Badge pill variant="primary">
+                        
+                        { servingPlayer ? servingText : "" }
+                    </Badge>
                 </div>
             </div>
         </div>

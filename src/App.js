@@ -1,11 +1,12 @@
 import Player from "./components/Player";
+import Header from "./components/Header";
+import Reset from "./components/Reset";
+import WinMessage from "./components/WinMessage";
 
 const App = ({ player1, player2, player1Increment, player2Increment, resetScore, servingP1, winner, text }) => (
   <>
       {/* header */}
-      <header className="jumbotron mt-4 mb-0">
-          <h1>{ text.game }</h1>
-      </header>
+      <Header text={ text.game }/>
 
       {/* scores */}
       <div className="row mb-4">
@@ -31,15 +32,19 @@ const App = ({ player1, player2, player1Increment, player2Increment, resetScore,
       </div>
 
       { /* winner message */}
-      <h2 className={`alert alert-success ${ winner > 0 ? "" : "d-none" }`}>{ text.player } { winner } { text.wins }!</h2>
+      <WinMessage 
+        playerText={ text.player }
+        winsText={ text.wins }
+        winner={ winner }
+      />
 
       <hr />
 
       { /* reset button */}
-      <button 
-        className="btn btn-danger"
-        onClick={ resetScore }
-      >{ text.reset }</button>
+      <Reset 
+        text={ text.reset }
+        handleClick={ resetScore }
+      />
   </>
 );
 

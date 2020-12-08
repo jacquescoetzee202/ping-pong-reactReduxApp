@@ -6,7 +6,8 @@ import reportWebVitals from './reportWebVitals';
 
 import store from "./data/store";
 
-const text = require("./text/esperanto.json");
+import esperanto from "./text/esperanto.json";
+import english from "./text/english.json";
 
 const render = () => {
   let state = store.getState();
@@ -14,7 +15,7 @@ const render = () => {
   ReactDOM.render(
     <React.StrictMode>
       <App
-        text={ text }
+        text={ esperanto }
         player1={ state.player1 }
         player2={ state.player2 }
         servingP1={ state.servingP1 }
