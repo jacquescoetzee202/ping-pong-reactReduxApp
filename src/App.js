@@ -3,8 +3,9 @@ import Header from "./components/Header";
 import Reset from "./components/Reset";
 import WinMessage from "./components/WinMessage";
 import Language from "./components/Language";
+import ResultsTable from "./components/ResultsTable";
 
-const App = ({ player1, player2, player1Increment, player2Increment, resetScore, servingP1, winner, text, lang1Select, lang2Select }) => (
+const App = ({ player1, player2, player1Increment, player2Increment, resetScore, servingP1, winner, text, lang1Select, lang2Select, gameHistory }) => (
   <>
       {/* header */}
       <Language 
@@ -51,6 +52,11 @@ const App = ({ player1, player2, player1Increment, player2Increment, resetScore,
         text={ text.reset }
         handleClick={ resetScore }
       />
+
+      <hr />
+
+      { /* game history table */ }
+      <ResultsTable results={ gameHistory } />
   </>
 );
 

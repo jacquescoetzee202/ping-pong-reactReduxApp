@@ -47,7 +47,7 @@ const history = state => {
           score: player1,
           won: winner === 1
         },
-        player2: {
+        player_2: {
           score: player2,
           won: winner === 2
         },
