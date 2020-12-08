@@ -1,11 +1,11 @@
-import Player from "./components/Player";
-import Header from "./components/Header";
-import Reset from "./components/Reset";
-import WinMessage from "./components/WinMessage";
-import Language from "./components/Language";
-import ResultsTable from "./components/ResultsTable";
+import Player from "./Player";
+import Header from "./Header";
+import Reset from "./Reset";
+import WinMessage from "./Winner";
+import Language from "./Language";
+import ResultsTable from "./Results";
 
-const App = ({ player1, player2, player1Increment, player2Increment, resetScore, servingP1, winner, text, lang1Select, lang2Select, gameHistory }) => (
+const App = ({ player1, player2, player1Increment, player2Increment, resetScore, servingP1, winner, text, lang1Select, lang2Select }) => (
   <>
       {/* header */}
       <Language 
@@ -18,13 +18,13 @@ const App = ({ player1, player2, player1Increment, player2Increment, resetScore,
       {/* scores */}
       <div className="row mb-4">
           <Player
-            playerText={ text.player }
-            servingText={ text.serving } 
-            player={ 1 }
-            servingPlayer={ servingP1 }
-            playerScore={ player1 }
-            playerIncrement={ player1Increment }
-            winner={ winner }
+            playerText={ text.player } // this has to be passed in as an own prop
+            servingText={ text.serving } // this has to be passed in as an own prop
+            player={ 1 } // this has to be passed in as an own prop
+            servingPlayer={ servingP1 } // || this can be dealt with at the wrapper
+            playerScore={ player1 } // || this can be dealt with at the wrapper
+            playerIncrement={ player1Increment } 
+            winner={ winner } // this can be dealt with at the wrapper
           />
 
           <Player
@@ -42,7 +42,6 @@ const App = ({ player1, player2, player1Increment, player2Increment, resetScore,
       <WinMessage 
         playerText={ text.player }
         winsText={ text.wins }
-        winner={ winner }
       />
 
       <hr />
@@ -56,7 +55,7 @@ const App = ({ player1, player2, player1Increment, player2Increment, resetScore,
       <hr />
 
       { /* game history table */ }
-      <ResultsTable results={ gameHistory } />
+      <ResultsTable />
   </>
 );
 
