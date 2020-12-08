@@ -1,0 +1,7 @@
+{
+    "game": "PingPong",
+    "player": "Player",
+    "serving": "Serving",
+    "wins": "wins",
+    "reset": "Reset"
+}
