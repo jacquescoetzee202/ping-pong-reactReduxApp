@@ -13,28 +13,14 @@ const ResultsTable = ({ results }) => {
                 </tr>
             </thead>
             <tbody>
-                { results.map((result, index) => {
-                    let winningScore;
-                    let loosingScore;
-                    let winner;
-                    if( result.player_1.won ) {
-                        winner = "Player 1";
-                        winningScore = result.player_1.score;
-                        loosingScore = result.player_2.score;
-                    } else {
-                        winner = "Player 2";
-                        winningScore = result.player_2.score;
-                        loosingScore = result.player_1.score;
-                    }
-
-                    return(
-                        <tr key={index}>
-                            <td>{ index + 1 }</td>
-                            <td>{ winner }</td>
-                            <td>{ winningScore }</td>
-                            <td>{ loosingScore }</td>
-                        </tr>
-                 );}) }
+                { results.map((result, index) => (
+                    <tr key={index}>
+                        <td>{ index + 1 }</td>
+                        <td>{ result.player_1.won ? "Player 1" : "Player 2" }</td>
+                        <td>{ result.player_1.won ? result.player_1.score : result.player_2.score }</td>
+                        <td>{ result.player_1.won ? result.player_2.score : result.player_1.score }</td>
+                    </tr>
+                 ))}
             </tbody>
         </Table>
     );
