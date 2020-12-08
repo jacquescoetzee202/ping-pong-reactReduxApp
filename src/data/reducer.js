@@ -62,6 +62,8 @@ const reducer = (state, action) => {
     case "PLAYER_1": return history(winner(server(player1(state))));
     case "PLAYER_2": return history(winner(server(player2(state))));
     case "RESET": return { ...initialState, gameHistory: state.gameHistory };
+    case "LANGUAGE_1": return { ...state, language: 1 }
+    case "LANGUAGE_2": return { ...state, language: 2 }
     default : return state;
   }
 };

@@ -2,10 +2,16 @@ import Player from "./components/Player";
 import Header from "./components/Header";
 import Reset from "./components/Reset";
 import WinMessage from "./components/WinMessage";
+import Language from "./components/Language";
 
-const App = ({ player1, player2, player1Increment, player2Increment, resetScore, servingP1, winner, text }) => (
+const App = ({ player1, player2, player1Increment, player2Increment, resetScore, servingP1, winner, text, lang1Select, lang2Select }) => (
   <>
       {/* header */}
+      <Language 
+        text={ text.language }
+        lang1Select={ lang1Select }
+        lang2Select={ lang2Select }
+      />
       <Header text={ text.game }/>
 
       {/* scores */}

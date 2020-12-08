@@ -15,13 +15,15 @@ const render = () => {
   ReactDOM.render(
     <React.StrictMode>
       <App
-        text={ esperanto }
+        text={ state.language === 1 ? english : esperanto }
         player1={ state.player1 }
         player2={ state.player2 }
         servingP1={ state.servingP1 }
         winner={ state.winner }
         player1Increment={ () => store.dispatch({ type: "PLAYER_1" }) }
         player2Increment={ () => store.dispatch({ type: "PLAYER_2" }) }
+        lang1Select={ () => store.dispatch({ type: "LANGUAGE_1"}) }
+        lang2Select={ () => store.dispatch({ type: "LANGUAGE_2"}) }
         resetScore={ () => store.dispatch({ type: "RESET" }) }
       />
     </React.StrictMode>,
