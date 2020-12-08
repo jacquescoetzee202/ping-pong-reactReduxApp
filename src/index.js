@@ -4,16 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import { createStore } from "redux";
-
-import initialState from "./data/initial";
-import reducer from "./data/reducer";
-
-const store = createStore(
-  reducer,
-  initialState,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),  
-);
+import store from "./data/store";
 
 const render = () => {
   let state = store.getState();
