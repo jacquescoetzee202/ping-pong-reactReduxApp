@@ -7,19 +7,19 @@ import Language from "./Language";
 import ResultsTable from "./Results";
 
 const App = () => (
-  <>
-      <Language />
-      <Header />
-      <div className="row mb-4">
-          <Player1 />
-          <Player2 />
-      </div>
-      <WinMessage />
-      <hr />
-      <Reset />
-      <hr />
-      <ResultsTable />
-  </>
+  <div>
+    <Language />
+    <Header />
+    <div className="row mb-4">
+        <Player1 />
+        <Player2 />
+    </div>
+    <WinMessage />
+    <hr />
+    <Reset />
+    <hr />
+    <ResultsTable />
+  </div>
 );
 
 export default App;

@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App';
-import Settings from './components/Settings/Settings';
+import Settings from './components/Settings';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from "react-redux";
 
@@ -11,6 +11,7 @@ import store from "./data/store";
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={ store }>
+      <App />
       <Settings />
     </Provider>
   </React.StrictMode>,

@@ -9,6 +9,7 @@ const initial = {
     player2Name: "",
     winningScore: 21,
     alternateAt: 5,
+    inProgress: false,
 }
 
 export default initial;
