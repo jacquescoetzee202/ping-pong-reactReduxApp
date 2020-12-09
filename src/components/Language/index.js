@@ -10,4 +10,11 @@ const mapStateToProps = (state, { lang1Select, lang2Select }) => {
     };
 };
 
-export default connect(mapStateToProps)(Language);
+const mapDispatchToProps = dispatch => {
+    return {
+        lang1Select: () => dispatch({ type: "LANGUAGE_1"}),
+        lang2Select: () => dispatch({ type: "LANGUAGE_2"}),
+    }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Language);
