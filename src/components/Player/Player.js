@@ -1,4 +1,4 @@
-import Button from "../Button";
+import Button from "./Button";
 import Badge from 'react-bootstrap/Badge'
 
 const Player = ({ servingPlayer, playerScore, playerIncrement, winner, playerText, servingText }) => {
