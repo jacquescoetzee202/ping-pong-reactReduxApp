@@ -7,8 +7,8 @@ import { Provider } from "react-redux";
 
 import store from "./data/store";
 
-import esperanto from "./text/esperanto.json";
-import english from "./text/english.json";
+import esperanto from "./language/esperanto.json";
+import english from "./language/english.json";
 
 
 let state = store.getState();
