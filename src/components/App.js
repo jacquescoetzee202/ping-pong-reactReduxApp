@@ -13,7 +13,7 @@ const App = ({ player1, player2, player1Increment, player2Increment, resetScore,
         lang1Select={ lang1Select }
         lang2Select={ lang2Select }
       />
-      <Header text={ text.game }/>
+      <Header />
 
       {/* scores */}
       <div className="row mb-4">
@@ -39,7 +39,6 @@ const App = ({ player1, player2, player1Increment, player2Increment, resetScore,
 
       { /* reset button */}
       <Reset 
-        text={ text.reset }
         handleClick={ resetScore }
       />
 

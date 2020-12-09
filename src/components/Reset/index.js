@@ -1,12 +1,11 @@
 import { connect } from "react-redux";
 import Reset from "./Reset";
+import translate from "../../language/translate";
 
-const mapStateToProps = (state, { playerText, winsText } ) => {
+const mapStateToProps = (state, { handleClick } ) => {
     return {
-        playerText: playerText,
-        winsText: winsText, 
-        winner: state.winner,
-        language: state.language, 
+        text: translate(state.language, "reset"),
+        handleClick: handleClick,
     };
 };
 
