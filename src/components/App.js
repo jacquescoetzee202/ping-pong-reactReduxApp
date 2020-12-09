@@ -8,7 +8,6 @@ import ResultsTable from "./Results";
 
 const App = ({ player1, player2, player1Increment, player2Increment, resetScore, servingP1, winner, text, lang1Select, lang2Select }) => (
   <>
-      {/* header */}
       <Language />
       <Header />
 
@@ -29,9 +28,7 @@ const App = ({ player1, player2, player1Increment, player2Increment, resetScore,
       <hr />
 
       { /* reset button */}
-      <Reset 
-        handleClick={ resetScore }
-      />
+      <Reset />
 
       <hr />
 

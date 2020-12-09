@@ -9,4 +9,10 @@ const mapStateToProps = (state, { handleClick } ) => {
     };
 };
 
-export default connect(mapStateToProps)(Reset);
+const mapDispatchToProps = dispatch => {
+    return {
+        handleClick: () => dispatch({ type: "RESET" }),
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Reset);
