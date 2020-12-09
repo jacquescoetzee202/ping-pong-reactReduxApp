@@ -70,12 +70,20 @@ const gameSettings = (state, action) => {
   }
 }
 
+const reset = state => {
+  return {
+  ...initialState, 
+  gameHistory: state.gameHistory,
+  inProgress: !state.inProgress,
+  }
+}
+
 // Reducer
 const reducer = (state, action) => {
   switch (action.type) {
     case "PLAYER_1": return history(winner(server(player1(state))));
     case "PLAYER_2": return history(winner(server(player2(state))));
-    case "RESET": return { ...initialState, gameHistory: state.gameHistory };
+    case "RESET": return reset(state);
     case "LANGUAGE_1": return { ...state, language: 1 }
     case "LANGUAGE_2": return { ...state, language: 2 }
     case "SAVE_SETTINGS": return gameSettings(state, action);
