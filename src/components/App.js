@@ -6,33 +6,18 @@ import WinMessage from "./WinMessage";
 import Language from "./Language";
 import ResultsTable from "./Results";
 
-const App = ({ player1, player2, player1Increment, player2Increment, resetScore, servingP1, winner, text, lang1Select, lang2Select }) => (
+const App = () => (
   <>
       <Language />
       <Header />
-
-      {/* scores */}
       <div className="row mb-4">
-          <Player1
-            playerIncrement={ player1Increment } // own prop
-          />
-
-          <Player2
-            playerIncrement={ player2Increment }
-          />
+          <Player1 />
+          <Player2 />
       </div>
-
-      { /* winner message */}
       <WinMessage />
-
       <hr />
-
-      { /* reset button */}
       <Reset />
-
       <hr />
-
-      { /* game history table */ }
       <ResultsTable />
   </>
 );

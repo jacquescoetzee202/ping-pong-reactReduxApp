@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import Player from "./Player";
+import { player2 } from "../../data/actions";
 import translate from "../../language/translate";
 
 const mapStateToProps = (state, { playerIncrement }) => {
@@ -13,5 +14,10 @@ const mapStateToProps = (state, { playerIncrement }) => {
     };
 };
 
-export default connect(mapStateToProps)(Player);
+const mapDispatchToProps = dispatch => {
+    return {
+        playerIncrement: () => dispatch(player2())
+    }
+}
 
+export default connect(mapStateToProps, mapDispatchToProps)(Player);
