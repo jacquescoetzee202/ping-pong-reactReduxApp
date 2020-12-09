@@ -5,11 +5,13 @@ class Form extends Component{
     constructor(props) {
         super(props);
 
+        const { player1Name, player2Name, winningScore, alternateAt } = this.props;
+
         this.state ={
-            player1Name: "",
-            player2Name: "",
-            winningScore: 21,
-            alternateAt: 5,
+            player1Name,
+            player2Name,
+            winningScore,
+            alternateAt,
         }
 
         this.player1Input = this.player1Input.bind(this);

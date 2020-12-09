@@ -64,8 +64,8 @@ const gameSettings = (state, action) => {
     ...state,
     player1Name,
     player2Name,
-    winningScore,
-    alternateAt,
+    winningScore: +winningScore,
+    alternateAt: +alternateAt,
   }
 }
 
