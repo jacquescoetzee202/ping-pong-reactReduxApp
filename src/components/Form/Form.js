@@ -16,7 +16,7 @@ class Form extends Component{
         this.player2Input = this.player2Input.bind(this);
         this.winInput = this.winInput.bind(this);
         this.alternateInput = this.alternateInput.bind(this);
-        this.startGame = this.startGame.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     player1Input(event) {
@@ -43,10 +43,10 @@ class Form extends Component{
         });
     }
 
-    startGame(event){
+    handleSubmit(event){
         event.preventDefault();
 
-        console.log(this.state);
+        this.props.startGame({...this.state});
     }
 
     render() {
@@ -70,7 +70,7 @@ class Form extends Component{
                         <label htmlFor="alternate">Alternate Every</label>
                         <input type="number" value={ alternateAt } className="form-control" id="alternate" onChange={ this.alternateInput }/>
                     </div>
-                    <button type="submit" className="btn btn-primary" onClick={ this.startGame }>Start Game</button>
+                    <button type="submit" className="btn btn-primary" onClick={ this.handleSubmit }>Start Game</button>
                 </form>
             </>
         );

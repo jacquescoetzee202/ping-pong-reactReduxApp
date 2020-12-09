@@ -1,6 +1,6 @@
 import Header from "../Header";
 import Language from "../Language";
-import Form from "../Form/Form.js";
+import Form from "../Form";
 
 const Settings = () => (
     <>

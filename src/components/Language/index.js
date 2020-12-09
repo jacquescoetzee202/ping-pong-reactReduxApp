@@ -3,11 +3,9 @@ import Language from "./Language";
 import { language1, language2 } from "../../data/actions";
 import translate from "../../language/translate";
 
-const mapStateToProps = (state, { lang1Select, lang2Select }) => {
+const mapStateToProps = (state) => {
     return {
         text: translate(state.language, "language"),
-        lang1Select,
-        lang2Select,
     };
 };
 

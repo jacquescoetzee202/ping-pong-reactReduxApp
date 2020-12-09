@@ -27,3 +27,10 @@ export const player2 = () => (
         type: "PLAYER_2",
     }
 );
+
+export const saveSettings = data => (
+    {
+        type: "SAVE_SETTINGS",
+        gameSettings: data,
+    }
+);

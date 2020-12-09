@@ -5,6 +5,10 @@ const initial = {
     winner: 0,
     gameHistory: [],
     language: 1,
+    player1Name: "",
+    player2Name: "",
+    winningScore: 21,
+    alternateAt: 5,
 }
 
 export default initial;

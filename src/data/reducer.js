@@ -56,6 +56,19 @@ const history = state => {
   } 
 }
 
+const gameSettings = (state, action) => {
+
+  const { player1Name, player2Name, winningScore, alternateAt } = action.gameSettings;
+  
+  return {
+    ...state,
+    player1Name,
+    player2Name,
+    winningScore,
+    alternateAt,
+  }
+}
+
 // Reducer
 const reducer = (state, action) => {
   switch (action.type) {
@@ -64,6 +77,7 @@ const reducer = (state, action) => {
     case "RESET": return { ...initialState, gameHistory: state.gameHistory };
     case "LANGUAGE_1": return { ...state, language: 1 }
     case "LANGUAGE_2": return { ...state, language: 2 }
+    case "SAVE_SETTINGS": return gameSettings(state, action);
     default : return state;
   }
 };
