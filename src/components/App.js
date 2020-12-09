@@ -33,10 +33,7 @@ const App = ({ player1, player2, player1Increment, player2Increment, resetScore,
       </div>
 
       { /* winner message */}
-      <WinMessage 
-        playerText={ text.player }
-        winsText={ text.wins }
-      />
+      <WinMessage />
 
       <hr />
 

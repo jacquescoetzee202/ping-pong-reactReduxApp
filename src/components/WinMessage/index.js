@@ -1,13 +1,14 @@
 // this provides the link to the Provider component, giving access to the store
 import { connect } from "react-redux";
-import WinMessage from "./WinMessage";
 
-const mapStateToProps = (state, { playerText, winsText } ) => {
+import WinMessage from "./WinMessage";
+import translate from "../../language/translate";
+
+const mapStateToProps = state => {
     return {
-        playerText: playerText,
-        winsText: winsText, 
+        text1: translate(state.language, "player"),
+        text2: translate(state.language, "wins"), 
         winner: state.winner,
-        language: state.language, 
     };
 };
 

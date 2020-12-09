@@ -5,11 +5,13 @@ const translate = ( langRef, string ) => {
     // setting the language translation dict based on langRef
     let langDict = langRef === 1 ? english : esperanto;
 
-    let words = string.split(/\s*\s\s*/);
+    let words = string.split(/\s+/);
 
-    let result = words.reduce( (translated, word) => {
-        return translated + langDict[word] + " ";
-    },"");
+    let translatedWords = words.map( word => {
+        return langDict[word] || word;
+    });
+
+    let result = translatedWords.join(" ");
 
     return result;
 }

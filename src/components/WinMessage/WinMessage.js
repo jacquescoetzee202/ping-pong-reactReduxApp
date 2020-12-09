@@ -1,9 +1,8 @@
-import translate from "../../language/translate";
 
-const WinMessage = ({ playerText, winsText, winner, language }) => (
+const WinMessage = ({ winner, text1, text2 }) => (
     <h2 className={`alert alert-success ${ winner > 0 ? "" : "d-none" }`}
     >
-        { translate(language, "player") } { winner } { translate(language, "wins") }!
+        {`${text1} ${winner} ${text2}!`}
     </h2>
 );
 
