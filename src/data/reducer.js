@@ -66,6 +66,7 @@ const gameSettings = (state, action) => {
     player2Name,
     winningScore: +winningScore,
     alternateAt: +alternateAt,
+    inProgress: !state.inProgress,
   }
 }
 
