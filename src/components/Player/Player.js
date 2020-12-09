@@ -1,11 +1,11 @@
 import Button from "../Button";
 import Badge from 'react-bootstrap/Badge'
 
-const Player = ({ player, servingPlayer, playerScore, playerIncrement, winner, playerText, servingText }) => {
+const Player = ({ servingPlayer, playerScore, playerIncrement, winner, playerText, servingText }) => {
     return (
         <div className="col-md-6 mt-4">
             <div className={`card text-center ${ servingPlayer ? "bg-dark text-white": "" }`}>
-                <h5 className="card-header">{ playerText } { player }</h5>
+                <h5 className="card-header">{ playerText }</h5>
                 <div className="card-body">
                     <p className="card-text display-1">{ playerScore }</p>
                 </div>

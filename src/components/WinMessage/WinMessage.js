@@ -1,8 +1,8 @@
 
-const WinMessage = ({ winner, text1, text2 }) => (
+const WinMessage = ({ text, winner }) => (
     <h2 className={`alert alert-success ${ winner > 0 ? "" : "d-none" }`}
     >
-        {`${text1} ${winner} ${text2}!`}
+        { text }!
     </h2>
 );
 

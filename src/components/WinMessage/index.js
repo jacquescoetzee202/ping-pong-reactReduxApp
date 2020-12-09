@@ -6,8 +6,7 @@ import translate from "../../language/translate";
 
 const mapStateToProps = state => {
     return {
-        text1: translate(state.language, "player"),
-        text2: translate(state.language, "wins"), 
+        text: translate(state.language, `player ${state.winner} wins`),
         winner: state.winner,
     };
 };
