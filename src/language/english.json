@@ -4,5 +4,9 @@
     "serving": "Serving",
     "wins": "wins",
     "reset": "Reset",
-    "language": "Langauge"
+    "language": "Langauge",
+    "match": "Match",
+    "winner": "Winner",
+    "looser": "LOOOOSER!!",
+    "score": "Score"
 }
