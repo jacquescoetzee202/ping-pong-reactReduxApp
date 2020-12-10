@@ -16,15 +16,9 @@ export const language2 = () => (
     }
 );
 
-export const player1 = () => (
+export const playerScores = ( playerNum ) => (
     {
-        type: "PLAYER_1",
-    }
-);
-
-export const player2 = () => (
-    {
-        type: "PLAYER_2",
+        type: playerNum === 1 ? "PLAYER_1" : "PLAYER_2",
     }
 );
 
@@ -38,8 +32,6 @@ export const saveSettings = data => (
         id: data.id,
     }
 );
-
-
 
 export const loaded = ({ id }) => (
     {
