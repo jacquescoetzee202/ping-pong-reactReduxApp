@@ -1,5 +1,5 @@
 {
-    "game": "PingPong",
+    "title": "PingPong",
     "player": "Player",
     "serving": "Serving",
     "wins": "wins",
@@ -8,5 +8,11 @@
     "match": "Match",
     "winner": "Winner",
     "looser": "LOOOOSER!!",
-    "score": "Score"
+    "score": "Score",
+    "name": "Name",
+    "winning": "Winning",
+    "alternate": "Alternate",
+    "every": "Every",
+    "start": "Start",
+    "game": "Game"
 }

@@ -4,7 +4,7 @@ import translate from "../../language/translate";
 
 const mapStateToProps = state => {
     return {
-        text: translate(state.language, "game"),
+        text: translate(state.language, "title"),
     };
 };
 

@@ -53,26 +53,35 @@ class Form extends Component{
 
     render() {
         const { player1Name, player2Name, winningScore, alternateAt } = this.state;
+
+        const { 
+            player1Txt,
+            player2Txt, 
+            winScoreTxt,
+            alternateTxt,
+            startTxt 
+        } = this.props;
+
         return(
             <>
                 <form className="container">
                     <div className="form-group">
-                        <label htmlFor="player1">Player 1 Name</label>
+                        <label htmlFor="player1">{ player1Txt }</label>
                         <input type="text" value={ player1Name } className="form-control" id="player1" onChange={ this.player1Input }/>
                     </div>
                     <div className="form-group">
-                        <label htmlFor="player2">Player 2 Name</label>
+                        <label htmlFor="player2">{ player2Txt }</label>
                         <input type="text" value={ player2Name } className="form-control" id="player2" onChange={ this.player2Input }/>
                     </div>
                     <div className="form-group">
-                        <label htmlFor="winningScore">Winning Score</label>
+                        <label htmlFor="winningScore">{ winScoreTxt }</label>
                         <input type="number" value={ winningScore } className="form-control" id="winningScore" onChange={ this.winInput }/>
                     </div>
                     <div className="form-group">
-                        <label htmlFor="alternate">Alternate Every</label>
+                        <label htmlFor="alternate">{ alternateTxt }</label>
                         <input type="number" value={ alternateAt } className="form-control" id="alternate" onChange={ this.alternateInput }/>
                     </div>
-                    <button type="submit" className="btn btn-primary" onClick={ this.handleSubmit }>Start Game</button>
+                    <button type="submit" className="btn btn-primary" onClick={ this.handleSubmit }>{ startTxt }</button>
                 </form>
             </>
         );

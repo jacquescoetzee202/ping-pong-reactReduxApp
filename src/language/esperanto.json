@@ -1,5 +1,5 @@
 {
-    "game": "PingPong",
+    "title": "PingPong",
     "player": "Ludanto",
     "serving": "Servas",
     "wins": "venkoj",
@@ -8,5 +8,11 @@
     "match": "Matĉo",
     "winner": "Gajninto",
     "looser": "Malfiksaaaaaas!!",
-    "score": "Poentaro"
+    "score": "Poentaro",
+    "name": "Nomo",
+    "winning": "Gajnante",
+    "alternate": "Alterni",
+    "every": "Ĉiu",
+    "start": "Komencu",
+    "game": "Ludo"
 }
