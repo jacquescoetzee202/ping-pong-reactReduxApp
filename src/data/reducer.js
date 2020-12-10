@@ -5,8 +5,18 @@ const player1 = state => ({ ...state, player1: state.player1 + 1});
 const player2 = state => ({ ...state, player2: state.player2 + 1});
 
 const server = state => {
-  const { servingP1, player1, player2 } = state;
-  let modulo = player1 >= 20 && player2 >= 20 ? 2 : 5;
+  
+  const { 
+    servingP1, 
+    player1, 
+    player2, 
+    alternateAt, 
+    winningScore 
+  } = state;
+
+  let deuce = winningScore - 1;
+
+  let modulo = player1 >= deuce && player2 >= deuce ? 2 : alternateAt;
   let serveChange = (player1 + player2) % modulo === 0;
 
   return {
