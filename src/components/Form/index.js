@@ -1,8 +1,9 @@
 import Form from "./Form";
 
 import { connect } from "react-redux";
-import { saveSettings } from "../../data/actions";
+import { saveSettings } from "../../data/actions/state";
 import translate from "../../language/translate";
+import { postGame } from "../../data/actions/api";
 
 const mapStateToProps = state => {
     
@@ -28,7 +29,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        startGame: data => dispatch(saveSettings(data)),
+        startGame: data => dispatch(postGame(data)),
     }
 };
 

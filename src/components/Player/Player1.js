@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import Player from "./Player";
-import { player1 } from "../../data/actions";
+import { player1 } from "../../data/actions/state";
 import translate from "../../language/translate";
 
 const mapStateToProps = (state, { playerIncrement }) => {

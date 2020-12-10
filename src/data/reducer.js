@@ -68,7 +68,7 @@ const history = state => {
 
 const gameSettings = (state, action) => {
 
-  const { player1Name, player2Name, winningScore, alternateAt } = action.gameSettings;
+  const { player1Name, player2Name, winningScore, alternateAt, id } = action;
   
   return {
     ...state,
@@ -76,6 +76,7 @@ const gameSettings = (state, action) => {
     player2Name,
     winningScore: +winningScore,
     alternateAt: +alternateAt,
+    id: +id,
     inProgress: !state.inProgress,
   }
 }
@@ -87,6 +88,7 @@ const reset = state => {
   inProgress: !state.inProgress,
   }
 }
+
 
 // Reducer
 const reducer = (state, action) => {

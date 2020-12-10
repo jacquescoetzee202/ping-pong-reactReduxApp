@@ -31,6 +31,19 @@ export const player2 = () => (
 export const saveSettings = data => (
     {
         type: "SAVE_SETTINGS",
-        gameSettings: data,
+        player1Name: data.player1Name,
+        player2Name: data.player2Name,
+        winningScore: data.winningScore,
+        alternateAt: data.alternateAt,
+        id: data.id,
+    }
+);
+
+
+
+export const loaded = ({ id }) => (
+    {
+        type: "LOADED",
+        id: id,
     }
 );
