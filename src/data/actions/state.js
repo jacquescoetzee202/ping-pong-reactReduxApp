@@ -16,9 +16,10 @@ export const language2 = () => (
     }
 );
 
-export const playerScores = ( playerNum ) => (
+export const playerScores = ( { response, playerNum } ) => (
     {
         type: playerNum === 1 ? "PLAYER_1" : "PLAYER_2",
+        response: response,
     }
 );
 

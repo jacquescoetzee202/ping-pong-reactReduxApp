@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "../../axios-config";
-import { saveSettings } from "./state";
+import { saveSettings, playerScores } from "./state";
 
 export const postGame = ( formState ) => {
     const { player1Name, player2Name, winningScore, alternateAt } = formState;
@@ -18,10 +18,15 @@ export const postGame = ( formState ) => {
 
 export const patchScore = playerNum => {
     return ( dispatch, getState ) => {
+        const id = getState().id;
+        console.log(id);
         axios.patch(`${id}/score`, {
             "player": playerNum
         }).then(({ data }) => {
-            dispatch(playerScore({ ...data.data }));
+            dispatch(playerScores({ 
+                response: { ...data.data },
+                playerNum,
+            }));
         });
     }
 
