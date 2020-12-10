@@ -16,12 +16,15 @@ export const language2 = () => (
     }
 );
 
-export const playerScores = ( { response, playerNum } ) => (
-    {
+export const playerScores = ( { servingP1, player1Won, player2Won, playerNum } ) => {
+    let gameWon = player1Won || player2Won;
+    let winner = player1Won ? 1 : 2;
+    return {
         type: playerNum === 1 ? "PLAYER_1" : "PLAYER_2",
-        response: response,
+        servingP1: servingP1,
+        winner: gameWon ? winner : 0,
     }
-);
+};
 
 export const saveSettings = data => (
     {

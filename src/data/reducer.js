@@ -1,8 +1,19 @@
 import initialState from "./initial";
 
 // Reducer functions
-const player1 = state => ({ ...state, player1: state.player1 + 1});
-const player2 = state => ({ ...state, player2: state.player2 + 1});
+const player1 = ( state, action ) => ({
+  ...state, 
+  player1: state.player1 + 1,
+  winner: action.winner,
+  servingP1: action.servingP1,
+});
+
+const player2 = ( state, action ) => ({
+  ...state, 
+  player2: state.player2 + 1,
+  winner: action.winner,
+  servingP1: action.servingP1,
+});
 
 const server = state => {
   
@@ -93,8 +104,8 @@ const reset = state => {
 // Reducer
 const reducer = (state, action) => {
   switch (action.type) {
-    case "PLAYER_1": return history(winner(server(player1(state))));
-    case "PLAYER_2": return history(winner(server(player2(state))));
+    case "PLAYER_1": return history((player1(state, action)));
+    case "PLAYER_2": return history((player2(state, action)));
     case "RESET": return reset(state);
     case "LANGUAGE_1": return { ...state, language: 1 }
     case "LANGUAGE_2": return { ...state, language: 2 }
