@@ -1,26 +1,40 @@
 import Table from 'react-bootstrap/Table';
 
-const ResultsTable = ({ results }) => {
+const ResultsTable = ({ results, player1Text, player2Text, headings }) => {
 
     return(
         <Table striped bordered hover>
             <thead>
                 <tr>
-                <th>Game</th>
-                <th>Winner</th>
-                <th>Winning score</th>
-                <th>Loosing score...LOOOSER!</th>
+                    { headings.map(( heading => (
+                        <th>{ heading }</th>
+                    )))}
                 </tr>
             </thead>
             <tbody>
-                { results.map((result, index) => (
-                    <tr key={index}>
-                        <td>{ index + 1 }</td>
-                        <td>{ result.player_1.won ? "Player 1" : "Player 2" }</td>
-                        <td>{ result.player_1.won ? result.player_1.score : result.player_2.score }</td>
-                        <td>{ result.player_1.won ? result.player_2.score : result.player_1.score }</td>
-                    </tr>
-                 ))}
+                { results.map((result, index) => {
+                    let player1wins = result.player_1.won;
+                    let player1Score = result.player_1.score;
+                    let player2Score = result.player_2.score;
+                    return (
+                        <tr key={index}>
+                            <td>
+                                { index + 1 }
+                            </td>
+                            <td>
+                                { player1wins ? player1Text : player2Text }
+                            </td>
+                            <td>
+                                { player1wins ? player2Text : player1Text }
+                            </td>
+                            <td>
+                                { player1wins ? player1Score : player2Score } 
+                                - 
+                                { player1wins ? player2Score : player1Score }
+                            </td>
+                        </tr>
+                    );
+                 })}
             </tbody>
         </Table>
     );
