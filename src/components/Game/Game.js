@@ -5,6 +5,7 @@ import Reset from "../Reset";
 import WinMessage from "../WinMessage";
 import Language from "../Language";
 import ResultsTable from "../Results";
+import Loading from "../Loading";
 
 const Game = ({ inProgress }) => (
 
@@ -20,7 +21,9 @@ const Game = ({ inProgress }) => (
         <hr />
         <Reset />
         <hr />
-        <ResultsTable />
+        <Loading>
+            <ResultsTable />
+        </Loading>
     </>
 );
 
