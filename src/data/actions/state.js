@@ -40,6 +40,7 @@ export const saveSettings = data => (
 export const historyResponse = data => (
     {
         type: "UPDATE_HISTORY",
+        gameHistory: data,
     }
 );
 

@@ -37,7 +37,7 @@ export const getGameHistory = () => {
         axios.get("/").then(({ data }) => {
             let gameData = data.data;
             console.log(gameData);
-            // dispatch(historyResponse({ gameData }));
+            dispatch(historyResponse( gameData ));
         });
     }
 }

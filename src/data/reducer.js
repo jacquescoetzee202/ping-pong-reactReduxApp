@@ -100,16 +100,45 @@ const reset = state => {
   }
 }
 
+const apiHistory = (state, action) => {
+  let completeGames = action.gameHistory.filter( game => game.complete );
+  let updatedHistory = [];
+
+  completeGames.forEach( game => {
+    updatedHistory.push(
+      {
+        player_1: {
+          score: game.player_1.score,
+          won: game.player_1.won,
+          name: game.player_1.name
+        },
+        player_2: {
+          score: game.player_2.score,
+          won: game.player_2.won,
+          name: game.player_2.name
+        },
+      }
+    );  
+  });
+
+  return {
+    ...state,
+    gameHistory: updatedHistory,
+    loaded: true,
+  } 
+}
+
 
 // Reducer
 const reducer = (state, action) => {
   switch (action.type) {
-    case "PLAYER_1": return history((player1(state, action)));
-    case "PLAYER_2": return history((player2(state, action)));
+    case "PLAYER_1": return player1(state, action);
+    case "PLAYER_2": return player2(state, action);
     case "RESET": return reset(state);
     case "LANGUAGE_1": return { ...state, language: 1 }
     case "LANGUAGE_2": return { ...state, language: 2 }
     case "SAVE_SETTINGS": return gameSettings(state, action);
+    case "UPDATE_HISTORY": return apiHistory(state, action);
     default : return state;
   }
 };
