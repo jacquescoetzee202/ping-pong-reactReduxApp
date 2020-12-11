@@ -1,4 +1,3 @@
-import { useState } from "react";
 import axios from "../../axios-config";
 import { saveSettings, playerScores } from "./state";
 

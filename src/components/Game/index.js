@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import Settings from "./Settings";
+import Game from "./Game";
 
 const mapStateToProps = state => {
     return {
@@ -7,4 +7,4 @@ const mapStateToProps = state => {
     };
 };
 
-export default connect(mapStateToProps)(Settings);
+export default connect(mapStateToProps)(Game);
