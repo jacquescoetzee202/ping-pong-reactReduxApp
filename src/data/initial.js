@@ -11,6 +11,7 @@ const initial = {
     alternateAt: 5,
     inProgress: false,
     id: null,
+    loaded: false,
 }
 
 export default initial;

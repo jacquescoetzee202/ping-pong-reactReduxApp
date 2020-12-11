@@ -37,9 +37,9 @@ export const saveSettings = data => (
     }
 );
 
-export const loaded = ({ id }) => (
+export const historyResponse = data => (
     {
-        type: "LOADED",
-        id: id,
+        type: "UPDATE_HISTORY",
     }
 );
+

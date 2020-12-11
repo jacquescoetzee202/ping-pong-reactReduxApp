@@ -1,5 +1,5 @@
 import axios from "../../axios-config";
-import { saveSettings, playerScores } from "./state";
+import { saveSettings, playerScores, historyResponse } from "./state";
 
 export const postGame = ( formState ) => {
     const { player1Name, player2Name, winningScore, alternateAt } = formState;
@@ -32,3 +32,12 @@ export const patchScore = playerNum => {
 
 }
 
+export const getGameHistory = () => {
+    return ( dispatch ) => {
+        axios.get("/").then(({ data }) => {
+            let gameData = data.data;
+            console.log(gameData);
+            // dispatch(historyResponse({ gameData }));
+        });
+    }
+}
