@@ -10,8 +10,6 @@ const mapStateToProps = state => {
 
     return {
         results: state.gameHistory,
-        player1Text: state.player1Name,
-        player2Text: state.player2Name,
         headings: translated,
     };
 };

@@ -1,6 +1,6 @@
 import Table from 'react-bootstrap/Table';
 
-const ResultsTable = ({ results, player1Text, player2Text, headings }) => {
+const ResultsTable = ({ results, headings }) => {
 
     return(
         <Table striped bordered hover>
@@ -16,16 +16,18 @@ const ResultsTable = ({ results, player1Text, player2Text, headings }) => {
                     let player1wins = result.player_1.won;
                     let player1Score = result.player_1.score;
                     let player2Score = result.player_2.score;
+                    let player1Name = result.player_1.name;
+                    let player2Name = result.player_2.name;
                     return (
                         <tr key={index}>
                             <td>
                                 { index + 1 }
                             </td>
                             <td>
-                                { player1wins ? player1Text : player2Text }
+                                { player1wins ? player1Name : player2Name }
                             </td>
                             <td>
-                                { player1wins ? player2Text : player1Text }
+                                { player1wins ? player2Name : player1Name }
                             </td>
                             <td>
                                 { player1wins ? player1Score : player2Score } 
