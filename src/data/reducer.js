@@ -15,68 +15,6 @@ const player2 = ( state, action ) => ({
   servingP1: action.servingP1,
 });
 
-const server = state => {
-  
-  const { 
-    servingP1, 
-    player1, 
-    player2, 
-    alternateAt, 
-    winningScore 
-  } = state;
-
-  let deuce = winningScore - 1;
-
-  let modulo = player1 >= deuce && player2 >= deuce ? 2 : alternateAt;
-  let serveChange = (player1 + player2) % modulo === 0;
-
-  return {
-    ...state,
-    servingP1: serveChange ? !servingP1 : servingP1,
-  }
-};
-
-const winner = state => {
-  const { winner, player1, player2, winningScore } = state;
-
-  if (winner > 0 ) {
-    return { ...state };
-  } 
-  else if ( player1 >= winningScore && player1 - player2 > 1 ) {
-    return { ...state, winner: 1 };
-  } 
-  else if ( player2 >= winningScore && player2 - player1 > 1 ) {
-    return { ...state, winner: 2 };
-  } else {
-    return { ...state };
-  }
-}
-
-const history = state => {
-  if(state.winner === 0) {
-    return state;
-  }
-
-  const { player1, player2, winner } = state;
-
-  return {
-    ...state,
-    gameHistory: [ 
-      ...state.gameHistory,
-      {
-        player_1: {
-          score: player1,
-          won: winner === 1
-        },
-        player_2: {
-          score: player2,
-          won: winner === 2
-        },
-      }
-    ]
-  } 
-}
-
 const gameSettings = (state, action) => {
 
   const { player1Name, player2Name, winningScore, alternateAt, id } = action;
